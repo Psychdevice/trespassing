@@ -264,8 +264,8 @@ int32_t ExceptionDialog( Exception& e )
 	uint16_t* lpw = 0;
 	wchar_t* lpwsz = 0;
 	intptr_t nchar = 0;
-	HWND wnd;
-	MSG msg;
+//	HWND wnd;
+//	MSG msg;
 
 	// -- STD Allocate memory for the template
 	lpdlg = (uint8_t*)malloc( 512 );

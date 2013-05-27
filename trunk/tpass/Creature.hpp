@@ -11,7 +11,6 @@ class Model;
 
 enum CreatureState
 {
-	// TODO (Rexhunter99#1#): Finish adding all the basic states
 	CSTATE_DEAD			= 0,
 	CSTATE_WANDER,
 	CSTATE_ATTACK1,

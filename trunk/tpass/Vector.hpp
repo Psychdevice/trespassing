@@ -4,6 +4,7 @@
 #define __vector_hpp__
 
 #include "Exception.hpp"
+#include <new>
 #include <stdlib.h>
 #include <string.h>
 
@@ -38,7 +39,13 @@ public:
 
         this->m_element_count = p_element_count;
         this->m_elements = (T*)malloc( sizeof( T ) * p_element_count );
-        memset( m_elements, 0, sizeof(T) * m_element_count );
+
+        for ( size_t i=0; i<m_element_count; i++ )
+		{
+			new (&this->m_elements[i]) T();
+		}
+        // Not sure I like using memset...
+        //memset( m_elements, 0, sizeof(T) * m_element_count );
     }
 
 	/** @brief Copy p_vector
@@ -50,7 +57,12 @@ public:
     {
         m_element_count = p_vector.m_element_count;
         m_elements = (T*)malloc( sizeof( T ) * m_element_count );
-        memcpy( m_elements, p_vector.m_elements, sizeof( T ) * m_element_count );
+
+		// Don't memcpy, rely on the copy constructor.
+        for ( size_t i=0; i<m_element_count; i++ )
+		{
+			new (&m_elements[ i ]) T( p_vector.m_elements[i] );
+		}
     }
 
 	/** @brief Copy Array<T> to Vector<T>
@@ -66,7 +78,7 @@ public:
 		// Assign the array elements over to the vector to avoid copying pointers
 		for ( size_t i=0; i<p_array.size(); i++ )
 		{
-			m_elements[i] = p_array[i];
+			new (&m_elements[i]) T(p_array[i]);
 		}
 	}
 
@@ -81,7 +93,7 @@ public:
 		// Assign the array elements over to the vector to avoid copying pointers
 		for ( size_t i=0; i<p_size; i++ )
 		{
-			m_elements[i] = p_array[i];
+			new (&m_elements[i]) T( p_array[i] );
 		}
 	}
 
@@ -129,9 +141,16 @@ public:
     // Assignment
     Vector<T>& operator = ( const Vector<T>& p_vector )
     {
-		m_element_count = p_vector.m_element_count;
+        m_element_count = p_vector.m_element_count;
         m_elements = (T*)malloc( sizeof( T ) * m_element_count );
-        memcpy( m_elements, p_vector.m_elements, sizeof( T ) * m_element_count );
+
+		// Don't memcpy, rely on the copy constructor.
+        for ( size_t i=0; i<m_element_count; i++ )
+		{
+			T* ptr = &m_elements[ i ];
+			new (ptr) T( p_vector.m_elements[i] );
+		}
+
         return *this;
     }
 
@@ -179,15 +198,17 @@ public:
 			// MemCpy the existing memory over
 			memcpy( temp, m_elements, sizeof( T ) * m_element_count );
 
+			// Get the pointer...
+			T* ptr = &temp[ m_element_count ];
+			// Placement new the fuck out of it
+			new (ptr) T( p_element );
+
 			// Increment the counter
 			m_element_count++;
 			// Free the old memory
 			free( m_elements );
 			// Assign the new memory pointer to our internal pointer
 			m_elements = temp;
-
-			// Assignment copy the element
-			m_elements[m_element_count-1].T( p_element );
 
 			return m_elements[m_element_count-1];
 		}

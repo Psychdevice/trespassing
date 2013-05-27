@@ -3,6 +3,7 @@
 #define __array_hpp__
 
 #include "Exception.hpp"
+#include <new>
 #include <stdlib.h>
 #include <string.h>
 
@@ -28,7 +29,11 @@ public:
 
         m_element_count = p_element_count;
         m_elements = (T*)malloc( sizeof( T ) * p_element_count );
-        memset( m_elements, 0, sizeof(T) * m_element_count );
+
+        for ( size_t i=0; i<m_element_count; i++ )
+		{
+			new (&m_elements[ i ]) T();
+		}
     }
 
 	/** @brief Copy p_array to this
@@ -42,7 +47,7 @@ public:
         this->m_elements = (T*)malloc( sizeof( T ) * p_array.m_element_count );
         for ( size_t i=0; i<p_array.size(); i++ )
 		{
-			m_elements[i] = p_array[i];
+			new (&m_elements[ i ]) T(p_array[ i ]);
 		}
     }
 
@@ -58,7 +63,7 @@ public:
 		for ( size_t i=0; i<p_count; i++ )
 		{
 			// -- copy the elements over from the C-Array to the internal array
-			this->m_elements[i] = p_array[i];
+			new (&this->m_elements[i]) T(p_array[ i ]);
 		}
 	}
 
@@ -106,9 +111,16 @@ public:
     inline Array& operator = ( const Array& p_array )
     {
 
-        if ( this->m_element_count <= p_array.m_element_count )
+        if ( this->m_element_count >= p_array.m_element_count )
         {
-            memcpy( this->m_elements, p_array.m_elements, sizeof( T ) * p_array.m_element_count );
+            // What... in the fuck was I thinking?
+            //memcpy( this->m_elements, p_array.m_elements, sizeof( T ) * p_array.m_element_count );
+
+            // Better, much better!
+            for ( size_t i=0; i<p_array.m_element_count; i++ )
+			{
+				new (&m_elements[ i ]) T( p_array[ i ]);
+			}
         }
 
         return *this;

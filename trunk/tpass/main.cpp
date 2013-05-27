@@ -21,21 +21,14 @@ int main( int argc, char **argv )
 
     try
     {
-        Mesozoic* game = new Mesozoic( "Hunter: Mesozoic" );
-
-        if ( !game )
-        {
-            throw Exception( "main :: Failed to initialise game instance!" );
-        }
+        Trespasser game( "Trespasser" );
 
         while ( true )
         {
-            if ( !game->BeginStep() ) break;
-            if ( !game->Step() ) break;
-            if ( !game->EndStep() ) break;
+            if ( !game.BeginStep() ) break;
+            if ( !game.Step() ) break;
+            if ( !game.EndStep() ) break;
         }
-
-        delete game;
     }
     catch( Exception &e )
     {
