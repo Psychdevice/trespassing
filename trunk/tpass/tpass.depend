@@ -8,12 +8,12 @@
 	<GL/glfw.h>
 	<stdio.h>
 
-1367920094 
+1369654124 
 
 1367825634 e:\james\programming\hunter\mesozoic\game.hpp
 	"String.hpp"
 
-1367861634 p"
+1369646315 p"
 
 1367888482 e:\james\programming\hunter\mesozoic\string.hpp
 	"Exception.hpp"
@@ -47,13 +47,13 @@
 	"Vector.hpp"
 	"Mesozoic.hpp"
 
-1368931906 hpp"
+1369655123 hpp"
 
 1367893144 source:e:\james\programming\hunter\mesozoic\string.cpp
 	"String.hpp"
 	"Array.hpp"
 
-1367929144 "
+1369654088 "
 
 1367713664 e:\james\programming\hunter\mesozoic\ostream.hpp
 	"String.hpp"
@@ -78,7 +78,7 @@
 	<GL/gl.h>
 	<GL/glext.h>
 
-1368695112 h>
+1369646309 h>
 
 1367895204 e:\james\programming\hunter\mesozoic\graphics.hpp
 	"Vector.hpp"
@@ -483,6 +483,8 @@
 	"Vector.hpp"
 	"Trespasser.hpp"
 
+1369653309 r.hpp"
+
 1367758806 /media/DATA/User/James/Programming/trespassing/tpass/Array.hpp
 	"Exception.hpp"
 	<stdlib.h>
@@ -636,6 +638,121 @@
 	"Array.hpp"
 
 1369646309 source:t:\programming\trespassing\tpass\texture.cpp
+	"Texture.hpp"
+	"String.hpp"
+	<stdlib.h>
+	<GL/gl.h>
+
+1369656935 source:/media/DATA/User/James/Programming/trespassing/tpass/Vector.cpp
+	"Vector.hpp"
+
+1369657159 /media/DATA/User/James/Programming/trespassing/tpass/Vector.hpp
+	"Exception.hpp"
+	<new>
+	<stdlib.h>
+	<string.h>
+
+1369296666 /media/DATA/User/James/Programming/trespassing/tpass/Exception.hpp
+	<stdint.h>
+	<stdlib.h>
+	<string.h>
+
+1369656935 source:/media/DATA/User/James/Programming/trespassing/tpass/ExceptionDialog.cpp
+	"String.hpp"
+	"Exception.hpp"
+	<stdint.h>
+	<stdlib.h>
+	<stdio.h>
+	<X11/Xlib.h>
+	<Windows.h>
+	<CommCtrl.h>
+
+1367924482 /media/DATA/User/James/Programming/trespassing/tpass/String.hpp
+	"Exception.hpp"
+	"Types.h"
+	<stdlib.h>
+	<string.h>
+
+1367684550 /media/DATA/User/James/Programming/trespassing/tpass/Types.h
+	<stdint.h>
+	<wchar.h>
+
+1369656933 source:/media/DATA/User/James/Programming/trespassing/tpass/Game.cpp
+	"Game.hpp"
+	"Exception.hpp"
+	"String.hpp"
+	"Graphics.hpp"
+	"OStream.hpp"
+	<GL/glfw.h>
+	<stdio.h>
+
+1367861634 /media/DATA/User/James/Programming/trespassing/tpass/Game.hpp
+	"String.hpp"
+
+1367931204 /media/DATA/User/James/Programming/trespassing/tpass/Graphics.hpp
+	"Vector.hpp"
+	<stdint.h>
+
+1367749664 /media/DATA/User/James/Programming/trespassing/tpass/OStream.hpp
+	"String.hpp"
+	<stdint.h>
+
+1369632920 source:/media/DATA/User/James/Programming/trespassing/tpass/Graphics.cpp
+	"Graphics.hpp"
+	"String.hpp"
+	"OStream.hpp"
+	"Font.hpp"
+	"Texture.hpp"
+	"Vector.hpp"
+	<GL/gl.h>
+	<GL/glext.h>
+
+1367929638 /media/DATA/User/James/Programming/trespassing/tpass/Font.hpp
+	"Types.h"
+
+1368014628 /media/DATA/User/James/Programming/trespassing/tpass/Texture.hpp
+	<stdint.h>
+
+1369656933 source:/media/DATA/User/James/Programming/trespassing/tpass/main.cpp
+	"Game.hpp"
+	"String.hpp"
+	"Exception.hpp"
+	"OStream.hpp"
+	"Array.hpp"
+	"Vector.hpp"
+	"Trespasser.hpp"
+
+1369656935 /media/DATA/User/James/Programming/trespassing/tpass/Array.hpp
+	"Exception.hpp"
+	<new>
+	<stdlib.h>
+	<string.h>
+
+1369656935 /media/DATA/User/James/Programming/trespassing/tpass/Trespasser.hpp
+	"Player.hpp"
+	"Array.hpp"
+	"Vector.hpp"
+	"Game.hpp"
+	"Creature.hpp"
+	"Material.hpp"
+
+1369656935 /media/DATA/User/James/Programming/trespassing/tpass/Player.hpp
+
+1369656935 /media/DATA/User/James/Programming/trespassing/tpass/Creature.hpp
+	<stdint.h>
+
+1367948314 /media/DATA/User/James/Programming/trespassing/tpass/Material.hpp
+
+1369623808 source:/media/DATA/User/James/Programming/trespassing/tpass/OStream.cpp
+	"OStream.hpp"
+	"Exception.hpp"
+	<stdio.h>
+
+1369656935 source:/media/DATA/User/James/Programming/trespassing/tpass/String.cpp
+	"String.hpp"
+	"Array.hpp"
+
+1368014622 source:/media/DATA/User/James/Programming/trespassing/tpass/Texture.cpp
 	"Texture.hpp"
 	"String.hpp"
 	<stdlib.h>
