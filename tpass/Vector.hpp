@@ -187,7 +187,7 @@ public:
 		{
 			m_elements = (T*)malloc( sizeof( T ) );
 			m_element_count++;
-			m_elements[0] = p_element;
+			new (&m_elements[0]) T( p_element );
 			return p_element;
 		}
 		else
