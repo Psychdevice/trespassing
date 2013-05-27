@@ -1,0 +1,18 @@
+#summary Rexhunter99's Standard Template Library
+#sidebar TheArm
+
+= Introduction =
+
+Rexhunter99's Standard Template Library, is a custom built STL library specifically made for game engines, meant to be high performance, thus free of bloat and only includes things needed by a game engine.
+
+
+= Details =
+
+Current available types are:
+  * Array< class >
+  * Vector< class >
+  * String - _Was templated for character types but is controlled by UNICODE definitions now_
+  * Map< key_type, value_type >
+  * OStream
+  * FStream
+  * Exception _Evolving, current has provisions for various necessities_
