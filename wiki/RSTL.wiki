@@ -14,33 +14,33 @@ Current available types are:
   * FStream
   * Exception _Evolving, current has provisions for various necessities_
 
-== Array< class > ==
+== Array`<T>` ==
 Constructors
   * Array( size_t p_size );
-  * Array( const Array<T>& p_array );
-  * Array( const T* p_array, size_t p_size );
+  * Array( const Array`<T>&` p_array );
+  * Array( const T`*` p_array, size_t p_size );
 Methods:
-  * T* data();
+  * T`*` data();
   * size_t size();
 Proposed:
-  * Array( const Vector<T>& p_vector );
+  * Array( const Vector`<T>&` p_vector );
   * size_t find( T p_find );
 
-== Vector< class > ==
+== Vector`<T>` ==
 Constructors:
   * Vector();
   * Vector( size_t p_size );
-  * Vector( const Vector<T>& p_vector );
-  * Vector( const Array<T>& p_array );
-  * Vector( const T* p_array, size_t p_size );
+  * Vector( const Vector`<T>&` p_vector );
+  * Vector( const Array`<T>&` p_array );
+  * Vector( const T`*` p_array, size_t p_size );
 Methods:
   * void clear();
-  * T& at( size_t p_index );
+  * T`&` at( size_t p_index );
   * size_t size();
-  * T* data();
-  * T& push_back( const T& p_element );
+  * T`*` data();
+  * T`&` push_back( const T`&` p_element );
   * void pop_back( );
-  * T& insert( const T& p_element, size_t p_index );
+  * T`&` insert( const T`&` p_element, size_t p_index );
   * void erase( size_t p_index );
 Proposed:
   * void erase( size_t p_start, size_t p_end );
