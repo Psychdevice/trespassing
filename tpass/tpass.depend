@@ -1,0 +1,449 @@
+# depslib dependency file v1.0
+1368659066 source:e:\james\programming\hunter\mesozoic\game.cpp
+	"Game.hpp"
+	"Exception.hpp"
+	"String.hpp"
+	"Graphics.hpp"
+	"OStream.hpp"
+	<GL/glfw.h>
+	<stdio.h>
+
+1367920094 
+
+1367825634 e:\james\programming\hunter\mesozoic\game.hpp
+	"String.hpp"
+
+1367861634 p"
+
+1367888482 e:\james\programming\hunter\mesozoic\string.hpp
+	"Exception.hpp"
+	"Types.h"
+	<stdlib.h>
+	<string.h>
+
+1367483194 e:\james\programming\hunter\mesozoic\exception.hpp
+	<stdlib.h>
+	<string.h>
+
+1367722806 e:\james\programming\hunter\mesozoic\array.hpp
+	"Exception.hpp"
+	<stdlib.h>
+	<string.h>
+
+1367546192 source:e:\james\programming\hunter\mesozoic\iostream.cpp
+	"IOStream.hpp"
+	"Exception.hpp"
+	<stdio.h>
+
+1367504634 e:\james\programming\hunter\mesozoic\iostream.hpp
+	"String.hpp"
+
+1367893270 source:e:\james\programming\hunter\mesozoic\main.cpp
+	"Game.hpp"
+	"String.hpp"
+	"Exception.hpp"
+	"OStream.hpp"
+	"Array.hpp"
+	"Vector.hpp"
+	"Mesozoic.hpp"
+
+1368931906 hpp"
+
+1367893144 source:e:\james\programming\hunter\mesozoic\string.cpp
+	"String.hpp"
+	"Array.hpp"
+
+1367929144 "
+
+1367713664 e:\james\programming\hunter\mesozoic\ostream.hpp
+	"String.hpp"
+	<stdint.h>
+
+1367713970 source:e:\james\programming\hunter\mesozoic\ostream.cpp
+	"OStream.hpp"
+	"Exception.hpp"
+	<stdio.h>
+
+1367648550 e:\james\programming\hunter\mesozoic\types.h
+	<stdint.h>
+	<wchar.h>
+
+1368659112 source:e:\james\programming\hunter\mesozoic\graphics.cpp
+	"Graphics.hpp"
+	"String.hpp"
+	"OStream.hpp"
+	"Font.hpp"
+	"Texture.hpp"
+	"Vector.hpp"
+	<GL/gl.h>
+	<GL/glext.h>
+
+1368695112 h>
+
+1367895204 e:\james\programming\hunter\mesozoic\graphics.hpp
+	"Vector.hpp"
+	<stdint.h>
+
+1367893638 e:\james\programming\hunter\mesozoic\font.hpp
+	"Types.h"
+
+1367978628 e:\james\programming\hunter\mesozoic\texture.hpp
+	<stdint.h>
+
+1367978622 source:e:\james\programming\hunter\mesozoic\texture.cpp
+	"Texture.hpp"
+	"String.hpp"
+	<stdlib.h>
+	<GL/gl.h>
+
+1367912280 e:\james\programming\hunter\mesozoic\vector.hpp
+	"Exception.hpp"
+	<stdlib.h>
+	<string.h>
+
+1367894878 source:e:\james\programming\hunter\mesozoic\vector.cpp
+	"Vector.hpp"
+
+1367925264 e:\james\programming\hunter\mesozoic\mesozoic.hpp
+	"Player.hpp"
+	"Array.hpp"
+	"Vector.hpp"
+	"Game.hpp"
+	"Creature.hpp"
+	"Material.hpp"
+
+1367808448 e:\james\programming\hunter\mesozoic\player.hpp
+
+1367884094 e:\james\programming\hunter\mesozoic\creature.hpp
+	<stdint.h>
+
+1367912314 e:\james\programming\hunter\mesozoic\material.hpp
+
+1367930878 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/Vector.cpp
+	"Vector.hpp"
+
+1367948280 /media/DATA/User/James/Programming/Hunter/Mesozoic/Vector.hpp
+	"Exception.hpp"
+	<stdlib.h>
+	<string.h>
+
+1367519194 /media/DATA/User/James/Programming/Hunter/Mesozoic/Exception.hpp
+	<stdlib.h>
+	<string.h>
+
+1368695112 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/Graphics.cpp
+	"Graphics.hpp"
+	"String.hpp"
+	"OStream.hpp"
+	"Font.hpp"
+	"Texture.hpp"
+	"Vector.hpp"
+	<GL/gl.h>
+	<GL/glext.h>
+
+1367931204 /media/DATA/User/James/Programming/Hunter/Mesozoic/Graphics.hpp
+	"Vector.hpp"
+	<stdint.h>
+
+1367924482 /media/DATA/User/James/Programming/Hunter/Mesozoic/String.hpp
+	"Exception.hpp"
+	"Types.h"
+	<stdlib.h>
+	<string.h>
+
+1367684550 /media/DATA/User/James/Programming/Hunter/Mesozoic/Types.h
+	<stdint.h>
+	<wchar.h>
+
+1367749664 /media/DATA/User/James/Programming/Hunter/Mesozoic/OStream.hpp
+	"String.hpp"
+	<stdint.h>
+
+1367929638 /media/DATA/User/James/Programming/Hunter/Mesozoic/Font.hpp
+	"Types.h"
+
+1368014628 /media/DATA/User/James/Programming/Hunter/Mesozoic/Texture.hpp
+	<stdint.h>
+
+1368931672 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/main.cpp
+	"Game.hpp"
+	"String.hpp"
+	"Exception.hpp"
+	"OStream.hpp"
+	"Array.hpp"
+	"Vector.hpp"
+	"Mesozoic.hpp"
+
+1367861634 /media/DATA/User/James/Programming/Hunter/Mesozoic/Game.hpp
+	"String.hpp"
+
+1367758806 /media/DATA/User/James/Programming/Hunter/Mesozoic/Array.hpp
+	"Exception.hpp"
+	<stdlib.h>
+	<string.h>
+
+1368931906 /media/DATA/User/James/Programming/Hunter/Mesozoic/Mesozoic.hpp
+	"Player.hpp"
+	"Array.hpp"
+	"Vector.hpp"
+	"Game.hpp"
+	"Creature.hpp"
+	"Material.hpp"
+
+1367844448 /media/DATA/User/James/Programming/Hunter/Mesozoic/Player.hpp
+
+1367920094 /media/DATA/User/James/Programming/Hunter/Mesozoic/Creature.hpp
+	<stdint.h>
+
+1367948314 /media/DATA/User/James/Programming/Hunter/Mesozoic/Material.hpp
+
+1368931638 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/OStream.cpp
+	"OStream.hpp"
+	"Exception.hpp"
+	<stdio.h>
+
+1367929144 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/String.cpp
+	"String.hpp"
+	"Array.hpp"
+
+1368014622 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/Texture.cpp
+	"Texture.hpp"
+	"String.hpp"
+	<stdlib.h>
+	<GL/gl.h>
+
+1368698812 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/Game.cpp
+	"Game.hpp"
+	"Exception.hpp"
+	"String.hpp"
+	"Graphics.hpp"
+	"OStream.hpp"
+	<GL/glfw.h>
+	<stdio.h>
+
+1367930878 source:d:\user\james\programming\hunter\mesozoic\vector.cpp
+	"Vector.hpp"
+
+1367948280 d:\user\james\programming\hunter\mesozoic\vector.hpp
+	"Exception.hpp"
+	<stdlib.h>
+	<string.h>
+
+1369264118 d:\user\james\programming\hunter\mesozoic\exception.hpp
+	<stdint.h>
+	<stdlib.h>
+	<string.h>
+
+1369296272 source:d:\user\james\programming\hunter\mesozoic\exceptiondialog.cpp
+	"String.hpp"
+	"Exception.hpp"
+	<stdint.h>
+	<stdlib.h>
+	<stdio.h>
+	<X11/Xlib.h>
+	<Windows.h>
+	<CommCtrl.h>
+
+1367758806 d:\user\james\programming\hunter\mesozoic\array.hpp
+	"Exception.hpp"
+	<stdlib.h>
+	<string.h>
+
+1367924482 d:\user\james\programming\hunter\mesozoic\string.hpp
+	"Exception.hpp"
+	"Types.h"
+	<stdlib.h>
+	<string.h>
+
+1367684550 d:\user\james\programming\hunter\mesozoic\types.h
+	<stdint.h>
+	<wchar.h>
+
+1368932584 source:d:\user\james\programming\hunter\mesozoic\game.cpp
+	"Game.hpp"
+	"Exception.hpp"
+	"String.hpp"
+	"Graphics.hpp"
+	"OStream.hpp"
+	<GL/glfw.h>
+	<stdio.h>
+
+1367861634 d:\user\james\programming\hunter\mesozoic\game.hpp
+	"String.hpp"
+
+1367931204 d:\user\james\programming\hunter\mesozoic\graphics.hpp
+	"Vector.hpp"
+	<stdint.h>
+
+1367749664 d:\user\james\programming\hunter\mesozoic\ostream.hpp
+	"String.hpp"
+	<stdint.h>
+
+1368695112 source:d:\user\james\programming\hunter\mesozoic\graphics.cpp
+	"Graphics.hpp"
+	"String.hpp"
+	"OStream.hpp"
+	"Font.hpp"
+	"Texture.hpp"
+	"Vector.hpp"
+	<GL/gl.h>
+	<GL/glext.h>
+
+1367929638 d:\user\james\programming\hunter\mesozoic\font.hpp
+	"Types.h"
+
+1368014628 d:\user\james\programming\hunter\mesozoic\texture.hpp
+	<stdint.h>
+
+1369296480 source:d:\user\james\programming\hunter\mesozoic\main.cpp
+	"Game.hpp"
+	"String.hpp"
+	"Exception.hpp"
+	"OStream.hpp"
+	"Array.hpp"
+	"Vector.hpp"
+	"Mesozoic.hpp"
+
+1368931906 d:\user\james\programming\hunter\mesozoic\mesozoic.hpp
+	"Player.hpp"
+	"Array.hpp"
+	"Vector.hpp"
+	"Game.hpp"
+	"Creature.hpp"
+	"Material.hpp"
+
+1367844448 d:\user\james\programming\hunter\mesozoic\player.hpp
+
+1367920094 d:\user\james\programming\hunter\mesozoic\creature.hpp
+	<stdint.h>
+
+1367948314 d:\user\james\programming\hunter\mesozoic\material.hpp
+
+1368931638 source:d:\user\james\programming\hunter\mesozoic\ostream.cpp
+	"OStream.hpp"
+	"Exception.hpp"
+	<stdio.h>
+
+1367929144 source:d:\user\james\programming\hunter\mesozoic\string.cpp
+	"String.hpp"
+	"Array.hpp"
+
+1368014622 source:d:\user\james\programming\hunter\mesozoic\texture.cpp
+	"Texture.hpp"
+	"String.hpp"
+	<stdlib.h>
+	<GL/gl.h>
+
+1367930878 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/Vector.cpp
+	"Vector.hpp"
+
+1367948280 /media/DATA/User/James/Programming/Hunter/Mesozoic/Vector.hpp
+	"Exception.hpp"
+	<stdlib.h>
+	<string.h>
+
+1369296666 /media/DATA/User/James/Programming/Hunter/Mesozoic/Exception.hpp
+	<stdint.h>
+	<stdlib.h>
+	<string.h>
+
+1369345428 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/ExceptionDialog.cpp
+	"String.hpp"
+	"Exception.hpp"
+	<stdint.h>
+	<stdlib.h>
+	<stdio.h>
+	<X11/Xlib.h>
+	<Windows.h>
+	<CommCtrl.h>
+
+1367924482 /media/DATA/User/James/Programming/Hunter/Mesozoic/String.hpp
+	"Exception.hpp"
+	"Types.h"
+	<stdlib.h>
+	<string.h>
+
+1367684550 /media/DATA/User/James/Programming/Hunter/Mesozoic/Types.h
+	<stdint.h>
+	<wchar.h>
+
+1368932584 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/Game.cpp
+	"Game.hpp"
+	"Exception.hpp"
+	"String.hpp"
+	"Graphics.hpp"
+	"OStream.hpp"
+	<GL/glfw.h>
+	<stdio.h>
+
+1367861634 /media/DATA/User/James/Programming/Hunter/Mesozoic/Game.hpp
+	"String.hpp"
+
+1367931204 /media/DATA/User/James/Programming/Hunter/Mesozoic/Graphics.hpp
+	"Vector.hpp"
+	<stdint.h>
+
+1367749664 /media/DATA/User/James/Programming/Hunter/Mesozoic/OStream.hpp
+	"String.hpp"
+	<stdint.h>
+
+1368695112 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/Graphics.cpp
+	"Graphics.hpp"
+	"String.hpp"
+	"OStream.hpp"
+	"Font.hpp"
+	"Texture.hpp"
+	"Vector.hpp"
+	<GL/gl.h>
+	<GL/glext.h>
+
+1367929638 /media/DATA/User/James/Programming/Hunter/Mesozoic/Font.hpp
+	"Types.h"
+
+1368014628 /media/DATA/User/James/Programming/Hunter/Mesozoic/Texture.hpp
+	<stdint.h>
+
+1369296480 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/main.cpp
+	"Game.hpp"
+	"String.hpp"
+	"Exception.hpp"
+	"OStream.hpp"
+	"Array.hpp"
+	"Vector.hpp"
+	"Mesozoic.hpp"
+
+1367758806 /media/DATA/User/James/Programming/Hunter/Mesozoic/Array.hpp
+	"Exception.hpp"
+	<stdlib.h>
+	<string.h>
+
+1368931906 /media/DATA/User/James/Programming/Hunter/Mesozoic/Mesozoic.hpp
+	"Player.hpp"
+	"Array.hpp"
+	"Vector.hpp"
+	"Game.hpp"
+	"Creature.hpp"
+	"Material.hpp"
+
+1367844448 /media/DATA/User/James/Programming/Hunter/Mesozoic/Player.hpp
+
+1367920094 /media/DATA/User/James/Programming/Hunter/Mesozoic/Creature.hpp
+	<stdint.h>
+
+1367948314 /media/DATA/User/James/Programming/Hunter/Mesozoic/Material.hpp
+
+1368931638 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/OStream.cpp
+	"OStream.hpp"
+	"Exception.hpp"
+	<stdio.h>
+
+1367929144 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/String.cpp
+	"String.hpp"
+	"Array.hpp"
+
+1368014622 source:/media/DATA/User/James/Programming/Hunter/Mesozoic/Texture.cpp
+	"Texture.hpp"
+	"String.hpp"
+	<stdlib.h>
+	<GL/gl.h>
+
