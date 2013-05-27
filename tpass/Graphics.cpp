@@ -13,11 +13,11 @@ Graphics::Graphics()
 {
 	m_log = new OStream( OTYPE_FILE, "video.log" );
 
-	(*m_log) << "===================================" << "\r\n";
+	(*m_log) << "======================================================================" << "\r\n";
 	(*m_log) << "== OpenGL Graphics Renderer" << "\r\n";
 	(*m_log) << "== " << (char*)glGetString( GL_RENDERER ) << "\r\n";
 	(*m_log) << "== " << (char*)glGetString( GL_VENDOR ) << "\r\n";
-	(*m_log) << "===================================" << "\r\n";
+	(*m_log) << "======================================================================" << "\r\n";
 	m_log->flush();
 
 	GLint vMajor = 0;

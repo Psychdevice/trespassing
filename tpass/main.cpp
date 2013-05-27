@@ -11,14 +11,13 @@
 int main( int argc, char **argv )
 {
 	// -- Construct a Command Line Options String
-	// TODO (Rexhunter99#1#): This current SIGSEGV's on me...
-	/*String CmdLine;
+	String CmdLine;
 	for ( int i=1; i<argc; i++ )
 	{
-		CmdLine += String( argv[i] );
-		if ( i < argc-1 ) CmdLine += String( " " );
+		CmdLine += argv[i];
+		if ( i < argc-1 ) CmdLine += " ";
 	}
-	sout << "Command Line: \'" << CmdLine << "\'" << endl;*/
+	sout << "Command Line: \'" << CmdLine << "\'" << endl;
 
     try
     {

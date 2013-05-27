@@ -19,6 +19,8 @@ Game::Game( String p_name )
     m_glfw = false;
 	m_gfx = 0;
 
+	// TODO (Rexhunter99#1#): Implement Linux set current working directory
+
     // -- Initialise GLFW
     if ( !glfwInit() )
     {
@@ -27,12 +29,14 @@ Game::Game( String p_name )
 
     m_glfw = true;
 
-    glfwOpenWindowHint( GLFW_OPENGL_VERSION_MAJOR, 4 );
+    glfwOpenWindowHint( GLFW_OPENGL_VERSION_MAJOR, 3 );
     glfwOpenWindowHint( GLFW_OPENGL_VERSION_MINOR, 0 );
     glfwOpenWindowHint( GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE );
 
     if ( !glfwOpenWindow( 800, 600, 8,8,8,8, 24, 0, GLFW_WINDOW ) )
     {
+		sout << "OpenGL Failed to initialise with Core features, using Legacy support..." << endl;
+
     	// -- High Quality mode failed, attempt compatability mode
     	glfwOpenWindowHint( GLFW_OPENGL_VERSION_MAJOR, 2 );
 		glfwOpenWindowHint( GLFW_OPENGL_VERSION_MINOR, 1 );
@@ -44,7 +48,12 @@ Game::Game( String p_name )
 		}
     }
 
+    // -- Request that V-Sync be disabled.
+    /* Note that application level settings are overridden (most of the time) by the environement
+    which are overriden by the window display manager and finally by the drivers.  Anything we call
+    down here in the application will be requested, not demanded.*/
     glfwSwapInterval( 0 );
+
 
     m_gfx = new Graphics();
 

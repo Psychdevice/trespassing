@@ -1,4 +1,15 @@
-// Vertex Shader – file "minimal.vert"
+// Vertex Shader – file "simple"
+
+#version 120
+
+attribute vec3 in_Position;
+attribute vec3 in_Color;
+
+void main(void)
+{
+        gl_Position = vec4(in_Position, 1.0);
+        gl_FrontColor = in_Color;
+}
 
 #version 140
 
