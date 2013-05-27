@@ -14,7 +14,7 @@ Current available types are:
   * FStream
   * Exception _Evolving, current has provisions for various necessities_
 
-== Array<T> ==
+== Array< class > ==
 Constructors
   * Array( size_t p_size );
   * Array( const Array<T>& p_array );
@@ -26,7 +26,7 @@ Proposed:
   * Array( const Vector<T>& p_vector );
   * size_t find( T p_find );
 
-== Vector<T> ==
+== Vector< class > ==
 Constructors:
   * Vector();
   * Vector( size_t p_size );
