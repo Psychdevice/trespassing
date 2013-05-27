@@ -30,16 +30,16 @@ Game::Game( String p_name )
     m_glfw = true;
 
     glfwOpenWindowHint( GLFW_OPENGL_VERSION_MAJOR, 3 );
-    glfwOpenWindowHint( GLFW_OPENGL_VERSION_MINOR, 0 );
-    glfwOpenWindowHint( GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE );
+    //glfwOpenWindowHint( GLFW_OPENGL_VERSION_MINOR, 1 );
+    //glfwOpenWindowHint( GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE );
 
     if ( !glfwOpenWindow( 800, 600, 8,8,8,8, 24, 0, GLFW_WINDOW ) )
     {
-		sout << "OpenGL Failed to initialise with Core features, using Legacy support..." << endl;
+		sout << "OpenGL Failed to initialise with core features, using legacy support..." << endl;
 
     	// -- High Quality mode failed, attempt compatability mode
     	glfwOpenWindowHint( GLFW_OPENGL_VERSION_MAJOR, 2 );
-		glfwOpenWindowHint( GLFW_OPENGL_VERSION_MINOR, 1 );
+		glfwOpenWindowHint( GLFW_OPENGL_VERSION_MINOR, 0 );
 		glfwOpenWindowHint( GLFW_OPENGL_PROFILE, 0 );
 
 		if ( !glfwOpenWindow( 800, 600, 8,8,8,0, 16, 0, GLFW_WINDOW ) )

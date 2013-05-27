@@ -321,6 +321,7 @@ String String::token( const char_t* p_delimiters )
 Array<String> String::split( const char_t* p_delimiters )
 {
 	// TODO (Rexhunter99#1#): Test this function
+	// NOTE (Rexhunter99#): String::split() seems to work, requires stress testing though.
 	String __temp = *this;
 	size_t __count = 0;
 

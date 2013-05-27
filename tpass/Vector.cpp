@@ -33,7 +33,7 @@ void Vector<T>::pop_back( )
 		// Deconstruct the back element
 		m_elements[m_element_count-1].~T();
 
-		// Increment the counter
+		// Decrement the counter
 		m_element_count--;
 		// Free the old memory
 		free( m_elements );
@@ -64,8 +64,8 @@ T& Vector<T>::insert( const T& p_element, size_t p_index )
 
 		// Copy the left half of the vector into temp
 		memcpy( temp, m_elements, sizeof(T) * p_index-1 );
-		// Copy the new element in after the left half
-		temp[p_index] = p_element;
+		// Placement new the fuck out of it
+		new (&temp[ p_index ]) T( p_element );
 		// Copy the right half of the vector into temp
 		memcpy( &temp[p_index+1], &m_elements[p_index], sizeof(T) * (m_element_count-p_index) );
 

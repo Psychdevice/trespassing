@@ -30,11 +30,23 @@ public:
 	Player()
 	{
 	}
+	Player( const Player& p_player )
+	{
+		m_name		= p_player.m_name;
+		m_health	= p_player.m_health;
+		m_x			= p_player.m_x;
+		m_y			= p_player.m_y;
+		m_z			= p_player.m_z;
+		m_yaw		= p_player.m_yaw;
+		m_pitch		= p_player.m_pitch;
+		m_roll		= p_player.m_roll;
+		m_rank		= p_player.m_rank;
+	}
 	~Player()
 	{
 	}
 
-private:
+protected:
 
 	String		m_name;		/**< Name of the player */
 	uint8_t		m_health;	/**< Maximum Health == 100 */

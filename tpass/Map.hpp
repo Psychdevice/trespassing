@@ -23,7 +23,7 @@ template <typename key_type, class val_type>
 class Map
 {
 	// TODO (Rexhunter99#1#): Finish implementing Map<>
-	// NOTE (Rexhunter99#1#): Do not use Map<>
+	// NOTE (Rexhunter99#): Do not use Map<>
 public:
 
 	Map() :
