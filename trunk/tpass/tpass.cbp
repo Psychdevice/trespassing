@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Mesozoic" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Utilities/;Documentation/;Graphics/;Graphics/Shaders/;Game/;Unused/;" />
+		<Build>
+			<Target title="Debug-Win">
+				<Option platforms="Windows;Unix;" />
+				<Option output="Game/Mesozoic[d]" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="Game/" />
+				<Option object_output="Build/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="--debug" />
+				<Compiler>
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DPLATFORM_WINDOWS" />
+					<Add option="-DBUILD_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libGLFW" />
+					<Add library="libopengl32" />
+					<Add library="libglu32" />
+					<Add library="libgdi32" />
+				</Linker>
+			</Target>
+			<Target title="Debug-Nix">
+				<Option platforms="Unix;" />
+				<Option output="Game/Mesozoic[d]" prefix_auto="1" extension_auto="0" />
+				<Option working_dir="Game/" />
+				<Option object_output="Build/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DPLATFORM_LINUX" />
+					<Add option="-DBUILD_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libGLEW" />
+					<Add library="libglfw" />
+					<Add library="libGLU" />
+					<Add library="libGL" />
+					<Add library="libX11" />
+				</Linker>
+			</Target>
+			<Target title="Release-Win">
+				<Option platforms="Windows;" />
+				<Option output="Game/Mesozoic" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="Game/" />
+				<Option object_output="Build/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-march=corei7" />
+					<Add option="-DPLATFORM_WINDOWS" />
+					<Add option="-DBUILD_RELEASE" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libGLFW" />
+					<Add library="libOpenGL32" />
+					<Add library="libglu32" />
+					<Add library="libgdi32" />
+				</Linker>
+			</Target>
+			<Target title="Release-Nix">
+				<Option platforms="Unix;" />
+				<Option output="Game/Mesozoic" prefix_auto="1" extension_auto="0" />
+				<Option working_dir="Game/" />
+				<Option object_output="Build/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="Linux" targets="Debug-Nix;Release-Nix;" />
+			<Add alias="Windows" targets="Debug-Win;Release-Win;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Array.hpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="Creature.hpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="Exception.hpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="ExceptionDialog.cpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="FStream.hpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="Font.hpp">
+			<Option virtualFolder="Graphics/" />
+		</Unit>
+		<Unit filename="Game.cpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="Game.hpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="Graphics.cpp">
+			<Option virtualFolder="Graphics/" />
+		</Unit>
+		<Unit filename="Graphics.hpp">
+			<Option virtualFolder="Graphics/" />
+		</Unit>
+		<Unit filename="Map.hpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="Material.hpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="Mesozoic.hpp" />
+		<Unit filename="Model.hpp">
+			<Option virtualFolder="Graphics/" />
+		</Unit>
+		<Unit filename="OStream.cpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="OStream.hpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="Player.hpp">
+			<Option virtualFolder="Game/" />
+		</Unit>
+		<Unit filename="String.cpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="String.hpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="Texture.cpp">
+			<Option virtualFolder="Graphics/" />
+		</Unit>
+		<Unit filename="Texture.hpp">
+			<Option virtualFolder="Graphics/" />
+		</Unit>
+		<Unit filename="Types.h">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="Utilities.txt">
+			<Option virtualFolder="Documentation/" />
+		</Unit>
+		<Unit filename="Vector.cpp">
+			<Option weight="0" />
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="Vector.hpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="docs/html/index.chm">
+			<Option virtualFolder="Documentation/" />
+		</Unit>
+		<Unit filename="main.cpp" />
+		<Unit filename="simple-v.glsl">
+			<Option virtualFolder="Graphics/Shaders/" />
+		</Unit>
+		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project project_number="1" output_directory="docs" />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output html_help="1" latex="1" />
+				<doxyfile_dot />
+				<general use_at_in_tags="1" />
+			</DoxyBlocks>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<wxsmith version="1">
+				<resources>
+					<wxDialog wxs="wxsmith/ExceptionDialog.wxs" src="ExceptionDialog.cpp" hdr="ExceptionDialog.h" fwddecl="0" i18n="1" name="ExceptionDialog" language="CPP" />
+				</resources>
+			</wxsmith>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

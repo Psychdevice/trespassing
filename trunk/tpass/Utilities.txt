@@ -1,0 +1,21 @@
+
+The Utilities folder contains all of our utility libraries, we prefer to use custom made ones as they are typically
+optimised for the project and can be easily debugged if need be.
+
+-- Exception
+The Exception Utility is our form of error sending and receiving, the game should throw exceptions when something
+goes wrong, especially during a non-recoverable process such as file loading, if a file doesn't exist, it should
+throw a "File Not Found" Exception.
+
+-- Array
+The Array Utility is an optimised container object that operates like a C-Array, it occupies contiguous memory
+and cannot be resized, an Array cannot be reused either, it must be deconstructed and constructed again for reuse.
+
+-- String
+The String Utility is a lightweight container for C-Strings, again in contiguous memory, the strings are NULL
+terminated, but can be added together and have various actions performed on them such as searches and tokenising.
+
+-- IOStream
+The IOStream Utility is a lightweight container for Input/Output Streams such as files.
+[ NOTE ] May need to split it into OStream and IStream and derive FStream from those.
+
