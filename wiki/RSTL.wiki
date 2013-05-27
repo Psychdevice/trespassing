@@ -1,5 +1,4 @@
 #summary Rexhunter99's Standard Template Library
-#sidebar TheArm
 
 = Introduction =
 
