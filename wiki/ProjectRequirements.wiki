@@ -5,6 +5,8 @@
 
 Follows is a list of libraries and/or software required to compile the project from its source files.  An IDE is not required, but highly recommended.
 
+Please also note that it is not necessary to set up cross-compiling for this project, I simply compile for whatever OS I happen to be in at the time so don't stress about that.
+
 
 = Details =
 
@@ -22,6 +24,6 @@ To download the above libraries on Ubuntu based distributions for Linux:
 {{{
 sudo apt-get install libgl1-mesa-dev libglew-dev libglfw-dev
 }}}
-This should use your synaptic package installer to install the required libraries to your system including the necessary drivers.  On Linux once these are installed, compile the application via Code::Blocks project provided in the repo and it should "just work"
+This should use your package installer to install the required libraries to your system including the necessary drivers.  On Linux once these are installed, compile the application via Code::Blocks project provided in the repo and it should "just work"
 
-Windows only requires you to install GLEW and GLFW, to get the 32-bit binaries of these, you can go to their website and download them, install them to someplace like: "C:/glew" and "C:/glfw" and set up Code::Blocks to recognise those two directories as the base directory for $(#glew) and $(#glfw) global variables.  I will later write a walkthrough to prepare those.  Too busy right now.
+Windows only requires you to install GLEW and GLFW, to get the 32-bit binaries of these, you can go to their website and download them, install them to someplace like: "C:/glew" and "C:/glfw" and set up Code::Blocks to recognise those two directories as the base directory for $(#glew) and $(#glfw) global variables.
