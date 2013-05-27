@@ -25,13 +25,13 @@ public:
 		m_creatures = Vector<Creature>();
 		m_materials = Vector<Material>();
 
-		/* These cause a SIGSEGV due to poor code in STL... Rexhunter99 is fixing!
+		// These cause a SIGSEGV due to poor code in STL... Rexhunter99 is fixing!
 		m_materials.push_back( Material( "Dirt" ) );
 		m_materials.push_back( Material( "Grass" ) );
 		m_materials.push_back( Material( "Sand" ) );
 		m_materials.push_back( Material( "Water" ) );
 		m_materials.push_back( Material( "Flesh" ) );
-		m_materials.push_back( Material( "Wood" ) );*/
+		m_materials.push_back( Material( "Wood" ) );
     }
 
     ~Trespasser()
