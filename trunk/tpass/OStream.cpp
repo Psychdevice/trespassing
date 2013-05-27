@@ -65,6 +65,8 @@ OStream& OStream::operator<<( String& s )
 {
     if ( !m_stream )
         throw Exception( "OStream :: Invalid stream!" );
+    if ( s.empty() )
+        return *this;
     if ( s.length() == 0 )
         return *this;
 

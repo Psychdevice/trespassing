@@ -179,16 +179,17 @@ public:
 			// MemCpy the existing memory over
 			memcpy( temp, m_elements, sizeof( T ) * m_element_count );
 
-			// Assignment copy the element
-			temp[m_element_count] = p_element;
-
 			// Increment the counter
 			m_element_count++;
 			// Free the old memory
 			free( m_elements );
 			// Assign the new memory pointer to our internal pointer
 			m_elements = temp;
-			return p_element;
+
+			// Assignment copy the element
+			m_elements[m_element_count-1].T( p_element );
+
+			return m_elements[m_element_count-1];
 		}
 	}
 

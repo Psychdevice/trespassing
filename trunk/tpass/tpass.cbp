@@ -2,14 +2,16 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Mesozoic" />
+		<Option title="Trespasser" />
+		<Option platforms="Windows;Unix;" />
 		<Option pch_mode="2" />
+		<Option default_target="Debug-Nix" />
 		<Option compiler="gcc" />
 		<Option virtualFolders="Utilities/;Documentation/;Graphics/;Graphics/Shaders/;Game/;Unused/;" />
 		<Build>
 			<Target title="Debug-Win">
 				<Option platforms="Windows;Unix;" />
-				<Option output="Game/Mesozoic[d]" prefix_auto="1" extension_auto="1" />
+				<Option output="Game/Mesozoic[d].exe" prefix_auto="1" extension_auto="0" />
 				<Option working_dir="Game/" />
 				<Option object_output="Build/Debug/" />
 				<Option type="1" />
@@ -51,7 +53,7 @@
 			</Target>
 			<Target title="Release-Win">
 				<Option platforms="Windows;" />
-				<Option output="Game/Mesozoic" prefix_auto="1" extension_auto="1" />
+				<Option output="Game/Mesozoic.exe" prefix_auto="1" extension_auto="0" />
 				<Option working_dir="Game/" />
 				<Option object_output="Build/Release/" />
 				<Option type="1" />
@@ -130,7 +132,6 @@
 		<Unit filename="Material.hpp">
 			<Option virtualFolder="Game/" />
 		</Unit>
-		<Unit filename="Mesozoic.hpp" />
 		<Unit filename="Model.hpp">
 			<Option virtualFolder="Graphics/" />
 		</Unit>
@@ -155,6 +156,7 @@
 		<Unit filename="Texture.hpp">
 			<Option virtualFolder="Graphics/" />
 		</Unit>
+		<Unit filename="Trespasser.hpp" />
 		<Unit filename="Types.h">
 			<Option virtualFolder="Utilities/" />
 		</Unit>

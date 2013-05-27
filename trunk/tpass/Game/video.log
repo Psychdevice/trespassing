@@ -1,7 +1,7 @@
 ===================================
 == OpenGL Graphics Renderer
-== GeForce GT 630M/PCIe/SSE2
-== NVIDIA Corporation
+== Mesa DRI Intel(R) Ivybridge Mobile 
+== Intel Open Source Technology Center
 ===================================
-PROFILE: [ 4.0 ]
-PROFILE: [ 4.0.0 ]
+PROFILE: [ 3.0 ]
+PROFILE: [ 3.0 Mesa 9.1.1 ]
