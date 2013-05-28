@@ -1,13 +1,15 @@
 
+#define GLEW_STATIC
+#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GL/glext.h>
+
 #include "Graphics.hpp"
 #include "String.hpp"
 #include "OStream.hpp"
 #include "Font.hpp"
 #include "Texture.hpp"
 #include "Vector.hpp"
-
-#include <GL/gl.h>
-#include <GL/glext.h>
 
 Graphics::Graphics()
 {
@@ -20,6 +22,8 @@ Graphics::Graphics()
 	(*m_log) << "======================================================================" << "\r\n";
 	m_log->flush();
 
+	glewInit();
+
 	GLint vMajor = 0;
 	GLint vMinor = 0;
 
@@ -28,6 +32,8 @@ Graphics::Graphics()
 
 	(*m_log) << "PROFILE: [ " << vMajor << "." << vMinor << " ]" << endl;
 	(*m_log) << "PROFILE: [ " << (char*)glGetString( GL_VERSION ) << " ]" << endl;
+
+	glCreateProgram();
 }
 
 Graphics::~Graphics()
