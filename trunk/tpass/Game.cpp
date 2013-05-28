@@ -1,4 +1,10 @@
 
+#define GLEW_STATIC
+#include <GL/glew.h>
+#include <GL/glfw.h>
+
+#include <stdio.h>
+
 #include "Game.hpp"
 
 #include "Exception.hpp"
@@ -7,9 +13,6 @@
 
 
 #include "OStream.hpp"
-#include <GL/glfw.h>
-
-#include <stdio.h>
 
 Game::Game( String p_name )
 {
@@ -29,9 +32,9 @@ Game::Game( String p_name )
 
     m_glfw = true;
 
-    glfwOpenWindowHint( GLFW_OPENGL_VERSION_MAJOR, 3 );
-    //glfwOpenWindowHint( GLFW_OPENGL_VERSION_MINOR, 1 );
-    //glfwOpenWindowHint( GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE );
+    glfwOpenWindowHint( GLFW_OPENGL_VERSION_MAJOR, 4 );
+    glfwOpenWindowHint( GLFW_OPENGL_VERSION_MINOR, 1 );
+    glfwOpenWindowHint( GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE );
 
     if ( !glfwOpenWindow( 800, 600, 8,8,8,8, 24, 0, GLFW_WINDOW ) )
     {

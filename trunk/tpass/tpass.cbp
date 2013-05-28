@@ -7,7 +7,7 @@
 		<Option pch_mode="2" />
 		<Option default_target="Debug-Nix" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Utilities\;Documentation\;Graphics\;Graphics\Shaders\;Game\;Unused\;" />
+		<Option virtualFolders="Utilities/;Documentation/;Graphics/;Graphics/Shaders/;Game/;Unused/;" />
 		<Build>
 			<Target title="Debug-Win">
 				<Option platforms="Windows;Unix;" />
@@ -44,8 +44,8 @@
 					<Add option="-DBUILD_DEBUG" />
 				</Compiler>
 				<Linker>
-					<Add library="libGLEW" />
 					<Add library="libglfw" />
+					<Add library="libGLEW" />
 					<Add library="libGLU" />
 					<Add library="libGL" />
 					<Add library="libX11" />
@@ -83,6 +83,26 @@
 				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-DPLATFORM_LINUX" />
+					<Add option="-DBUILD_RELEASE" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="Release-Nix[AMD-FX]">
+				<Option platforms="Unix;" />
+				<Option output="Game/Trespasser" prefix_auto="1" extension_auto="0" />
+				<Option working_dir="Game/" />
+				<Option object_output="Build/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-march=athlon-fx" />
+					<Add option="-O3" />
+					<Add option="-DPLATFORM_LINUX" />
+					<Add option="-DBUILD_RELEASE" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -132,6 +152,9 @@
 		<Unit filename="Graphics.hpp">
 			<Option virtualFolder="Graphics/" />
 		</Unit>
+		<Unit filename="LICENSE.TXT">
+			<Option virtualFolder="Documentation/" />
+		</Unit>
 		<Unit filename="Map.hpp">
 			<Option virtualFolder="Utilities/" />
 		</Unit>
@@ -150,6 +173,7 @@
 		<Unit filename="Player.hpp">
 			<Option virtualFolder="Game/" />
 		</Unit>
+		<Unit filename="Shader.hpp" />
 		<Unit filename="String.cpp">
 			<Option virtualFolder="Utilities/" />
 		</Unit>
@@ -161,6 +185,9 @@
 		</Unit>
 		<Unit filename="Texture.hpp">
 			<Option virtualFolder="Graphics/" />
+		</Unit>
+		<Unit filename="Thread.hpp">
+			<Option virtualFolder="Utilities/" />
 		</Unit>
 		<Unit filename="Trespasser.hpp" />
 		<Unit filename="Types.h">
@@ -175,9 +202,6 @@
 		</Unit>
 		<Unit filename="Vector.hpp">
 			<Option virtualFolder="Utilities/" />
-		</Unit>
-		<Unit filename="docs/html/index.chm">
-			<Option virtualFolder="Documentation/" />
 		</Unit>
 		<Unit filename="main.cpp" />
 		<Unit filename="simple-v.glsl">
