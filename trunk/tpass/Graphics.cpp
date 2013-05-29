@@ -20,7 +20,6 @@ Graphics::Graphics()
 	(*m_log) << "== " << (char*)glGetString( GL_RENDERER ) << endl;
 	(*m_log) << "== " << (char*)glGetString( GL_VENDOR ) << endl;
 	(*m_log) << "======================================================================" << endl;
-	//m_log->flush();
 
 	glewInit();
 
@@ -33,7 +32,7 @@ Graphics::Graphics()
 	(*m_log) << "PROFILE: [ " << vMajor << "." << vMinor << " ]" << endl;
 	(*m_log) << "PROFILE: [ " << (char*)glGetString( GL_VERSION ) << " ]" << endl;
 
-	glCreateProgram();
+	//glCreateProgram();
 }
 
 Graphics::~Graphics()

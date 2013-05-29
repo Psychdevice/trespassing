@@ -21,6 +21,8 @@ int main( int argc, char **argv )
 
     try
     {
+    	throw 10;
+
         Trespasser game( "Trespasser" );
 
         while ( true )
@@ -45,6 +47,11 @@ int main( int argc, char **argv )
 		{
 			sout << "Can't ignore exception, it occurs in main(...)! Aborting..." << endl;
 		}
+    }
+    catch (...)
+    {
+    	Exception e( "A fatal exception has occurred.\r\nThe exception is of an unknown type and was not handled appropriately,\r\nthis may have been an exception thrown by the user." );
+    	ExceptionDialog( e );
     }
 
     return 0;
