@@ -134,6 +134,9 @@
 		<Unit filename="ExceptionDialog.cpp">
 			<Option virtualFolder="Utilities/" />
 		</Unit>
+		<Unit filename="FStream.cpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
 		<Unit filename="FStream.hpp">
 			<Option virtualFolder="Utilities/" />
 		</Unit>
@@ -151,6 +154,12 @@
 		</Unit>
 		<Unit filename="Graphics.hpp">
 			<Option virtualFolder="Graphics/" />
+		</Unit>
+		<Unit filename="IOStream.cpp">
+			<Option virtualFolder="Utilities/" />
+		</Unit>
+		<Unit filename="IOStream.hpp">
+			<Option virtualFolder="Utilities/" />
 		</Unit>
 		<Unit filename="LICENSE.TXT">
 			<Option virtualFolder="Documentation/" />
@@ -173,7 +182,12 @@
 		<Unit filename="Player.hpp">
 			<Option virtualFolder="Game/" />
 		</Unit>
-		<Unit filename="Shader.hpp" />
+		<Unit filename="Shader.cpp">
+			<Option virtualFolder="Graphics/" />
+		</Unit>
+		<Unit filename="Shader.hpp">
+			<Option virtualFolder="Graphics/" />
+		</Unit>
 		<Unit filename="String.cpp">
 			<Option virtualFolder="Utilities/" />
 		</Unit>

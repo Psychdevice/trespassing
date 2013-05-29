@@ -6,21 +6,21 @@
 
 #include "Graphics.hpp"
 #include "String.hpp"
-#include "OStream.hpp"
+#include "FStream.hpp"
 #include "Font.hpp"
 #include "Texture.hpp"
 #include "Vector.hpp"
 
 Graphics::Graphics()
 {
-	m_log = new OStream( OTYPE_FILE, "video.log" );
+	m_log = new FStream( "video.log", FACCESS_WRITE );
 
 	(*m_log) << "======================================================================" << "\r\n";
-	(*m_log) << "== OpenGL Graphics Renderer" << "\r\n";
-	(*m_log) << "== " << (char*)glGetString( GL_RENDERER ) << "\r\n";
-	(*m_log) << "== " << (char*)glGetString( GL_VENDOR ) << "\r\n";
-	(*m_log) << "======================================================================" << "\r\n";
-	m_log->flush();
+	(*m_log) << "== OpenGL Graphics Renderer" << endl;
+	(*m_log) << "== " << (char*)glGetString( GL_RENDERER ) << endl;
+	(*m_log) << "== " << (char*)glGetString( GL_VENDOR ) << endl;
+	(*m_log) << "======================================================================" << endl;
+	//m_log->flush();
 
 	glewInit();
 
@@ -52,7 +52,7 @@ Font* Graphics::createFont( String& p_fontname )
 {
 	const Font& font = m_font_list.push_back( Font() );
 
-	OStream file( OTYPE_FILE, p_fontname );
+	FStream file( p_fontname, FACCESS_READ );
 
 	return const_cast<Font*>(&font);
 }
@@ -61,7 +61,7 @@ Texture* Graphics::createTexture( String& p_filename )
 {
 	const Texture& texture = m_texture_list.push_back( Texture() );
 
-	OStream file( OTYPE_FILE, p_filename );
+	FStream file( p_filename, FACCESS_READ );
 
 	return const_cast<Texture*>(&texture);
 }

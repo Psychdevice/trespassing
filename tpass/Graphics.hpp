@@ -6,7 +6,7 @@
 #include <stdint.h>
 
 class String;
-class OStream;
+class FStream;
 class Font;
 class Texture;
 
@@ -35,7 +35,7 @@ public:
 
 private:
 
-	OStream*	m_log;
+	FStream*	m_log;
     float   	m_projection[16];
     float   	m_world[16];
     float   	m_transform[16];
