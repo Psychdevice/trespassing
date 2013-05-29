@@ -13,7 +13,7 @@ class IOStream
 public:
 
 	IOStream();
-    ~IOStream();
+    virtual ~IOStream();
 
 	// -- TEXT streaming
     virtual IOStream& operator << ( String& s );
