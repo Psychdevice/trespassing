@@ -35,8 +35,18 @@ FStream::FStream( const char* p_name, FStreamAccess p_access )
 
 FStream::~FStream()
 {
-	if ( !m_stream ) throw Exception( "FStream :: Invalid stream in ~FStream()!" );
+	if ( m_stream )
+	{
+		fclose( (FILE*)m_stream );
+		m_stream = (void*)NULL;
+	}
+}
 
-	fclose( (FILE*)m_stream );
-	m_stream = (void*)NULL;
+void FStream::close(  )
+{
+	if ( m_stream )
+	{
+		fclose( (FILE*)m_stream );
+		m_stream = (void*)NULL;
+	}
 }
