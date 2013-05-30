@@ -1,4 +1,5 @@
 #include "String.hpp"
+#include "Array.hpp"
 #include "Exception.hpp"
 
 #include <stdint.h>
@@ -128,14 +129,21 @@ int32_t ExceptionDialog( Exception& e )
 						{
 							Window root;
 							int x, y;
-							unsigned int width, height;
-							unsigned int border_width;
-							unsigned int depth;
+							unsigned int	width, height;
+							unsigned int	border_width;
+							unsigned int	depth;
+							unsigned int	line_num = 1;
 
-							if ( XGetGeometry( dpy, edt_text, &root,
-								&x, &y, &width, &height, &border_width, &depth) == true )
+							if ( XGetGeometry( dpy, edt_text, &root, &x, &y, &width, &height, &border_width, &depth) == true )
 							{
-								XDrawString( dpy, edt_text, gc, 4, 4+16, e.what(), strlen(e.what()) );
+								String text = e.what();
+
+								Array<String> lines = text.split( "\n" );
+
+								for ( line_num = 0; line_num < lines.size(); line_num++ )
+								{
+									XDrawString( dpy, edt_text, gc, 4, 4 + (16*( line_num + 1 ) ), lines[line_num], lines[line_num].length()-1 );
+								}
 							}
 						}
 						if ( ev.xexpose.window == btn_abort )

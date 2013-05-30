@@ -15,10 +15,10 @@ Graphics::Graphics()
 {
 	m_log = new FStream( "video.log", FACCESS_WRITE );
 
-	(*m_log) << "======================================================================" << "\r\n";
-	(*m_log) << "== OpenGL Graphics Renderer" << endl;
-	(*m_log) << "== " << (char*)glGetString( GL_RENDERER ) << endl;
-	(*m_log) << "== " << (char*)glGetString( GL_VENDOR ) << endl;
+	(*m_log) << "======================================================================\r\n";
+	(*m_log) << "== OpenGL Graphics Renderer\r\n";
+	(*m_log) << "== " << (char*)glGetString( GL_RENDERER ) << "\r\n";
+	(*m_log) << "== " << (char*)glGetString( GL_VENDOR ) << "\r\n";
 	(*m_log) << "======================================================================" << endl;
 
 	glewInit();
@@ -29,7 +29,7 @@ Graphics::Graphics()
 	glGetIntegerv( GL_MAJOR_VERSION, &vMajor );
 	glGetIntegerv( GL_MINOR_VERSION, &vMinor );
 
-	(*m_log) << "PROFILE: [ " << vMajor << "." << vMinor << " ]" << endl;
+	(*m_log) << "PROFILE: [ " << vMajor << "." << vMinor << " ]" << "\r\n";
 	(*m_log) << "PROFILE: [ " << (char*)glGetString( GL_VERSION ) << " ]" << endl;
 
 	//glCreateProgram();

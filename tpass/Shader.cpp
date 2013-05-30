@@ -1,6 +1,7 @@
 
 #include "Shader.hpp"
 #include "String.hpp"
+#include "FStream.hpp"
 
 #include <GL/glew.h>
 
@@ -20,5 +21,7 @@ Shader::Shader( const Shader& p_copy )
 
 Shader::Shader( String& p_vertex, String& p_fragment )
 {
-	// use FStream?
+	FStream file( p_vertex, FACCESS_READ );
+
+	file.close();
 }
