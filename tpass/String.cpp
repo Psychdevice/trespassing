@@ -365,3 +365,12 @@ void String::__clear()
     }
 }
 
+size_t String::find( const char* p_string, size_t p_start )
+{
+	if ( this->clear() ) return String::npos;
+	size_t p_slen = strlen( p_string );
+
+	if ( )
+
+	return -1;
+}

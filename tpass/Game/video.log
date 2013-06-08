@@ -1,7 +1,7 @@
 ======================================================================
 == OpenGL Graphics Renderer
-== AMD Radeon HD 7700 Series
-== ATI Technologies Inc.
+== Intel(R) HD Graphics 4000
+== Intel
 ======================================================================
-PROFILE: [ 4.2 ]
-PROFILE: [ 4.2.12217 Compatibility Profile Context 12.104.0.0 ]
+PROFILE: [ 3.3 ]
+PROFILE: [ 3.3.0 - Build 8.15.10.2669 ]

@@ -10,7 +10,7 @@ public:
 
 	Shader();
 	Shader( const Shader& p_copy );
-	Shader( String& p_vertex, String& p_fragment );
+	Shader( String p_vertex, String p_fragment );
 	~Shader();
 
 	void bind();

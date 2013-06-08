@@ -22,6 +22,8 @@ class String
 {
 public:
 
+	static const size_t npos = -1;
+
 	/** @brief Default constructor, initialises an empty string
      */
     String() :
@@ -119,6 +121,8 @@ public:
      *
      */
     String substr( size_t p_start, size_t p_end );
+
+	size_t find( const char* p_string, size_t p_start = 0 );
 
 	/** @brief A sequence of calls to this function split this into tokens, which are sequences of contiguous characters separated by any of the characters that are part of p_delimiters.
      *

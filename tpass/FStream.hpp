@@ -22,7 +22,10 @@ public:
     FStream( const char* p_name, FStreamAccess p_access = FACCESS_BOTH );
     ~FStream();
 
-    void close();
+	bool	eos();
+	void	writeln( String& p_string );
+	String	readln();
+    void	close();
 
 
 protected:
