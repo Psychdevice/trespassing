@@ -5,6 +5,7 @@
 #include "OStream.hpp"
 #include "Array.hpp"
 #include "Vector.hpp"
+#include "Shader.hpp"
 
 #include "Trespasser.hpp"
 
@@ -21,9 +22,10 @@ int main( int argc, char **argv )
 
     try
     {
-    	throw 10;
+		Trespasser game( "Trespasser" );
 
-        Trespasser game( "Trespasser" );
+		Shader *test = new Shader( String("data/shaders/simple-v.glsl"), String() );
+		delete test;
 
         while ( true )
         {

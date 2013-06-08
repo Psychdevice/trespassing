@@ -2,6 +2,7 @@
 #include "Shader.hpp"
 #include "String.hpp"
 #include "FStream.hpp"
+#include "OStream.hpp"
 
 #include <GL/glew.h>
 
@@ -19,9 +20,19 @@ Shader::Shader( const Shader& p_copy )
 	this->m_fshader	= p_copy.m_fshader;
 }
 
-Shader::Shader( String& p_vertex, String& p_fragment )
+Shader::Shader( String p_vertex, String p_fragment )
 {
 	FStream file( p_vertex, FACCESS_READ );
 
+	while( !file.eos() )
+	{
+		String line = file.readln();
+		sout << line << endl;
+	}
+
 	file.close();
+}
+
+Shader::~Shader()
+{
 }
