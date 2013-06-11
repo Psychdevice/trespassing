@@ -150,6 +150,12 @@
 		<Unit filename="Game.hpp">
 			<Option virtualFolder="Game/" />
 		</Unit>
+		<Unit filename="Game/data/shaders/terrain-g.glsl">
+			<Option virtualFolder="Graphics/Shaders/" />
+		</Unit>
+		<Unit filename="Game/data/shaders/terrain-v.glsl">
+			<Option virtualFolder="Graphics/Shaders/" />
+		</Unit>
 		<Unit filename="Graphics.cpp">
 			<Option virtualFolder="Graphics/" />
 		</Unit>
@@ -219,9 +225,6 @@
 			<Option virtualFolder="Utilities/" />
 		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="simple-v.glsl">
-			<Option virtualFolder="Graphics/Shaders/" />
-		</Unit>
 		<Extensions>
 			<DoxyBlocks>
 				<comment_style block="0" line="0" />
