@@ -2,6 +2,8 @@
 #ifndef __map_hpp__
 #define __map_hpp__
 
+#include "Exception.hpp"
+
 template <class A, class B>
 class Pair
 {
@@ -34,6 +36,19 @@ public:
 	~Map()
 	{
 		this->clear();
+	}
+
+	val_type& operator [] ( const key_type p_key )
+	{
+		node_t* ptr = this->first;
+		while ( ptr )
+		{
+			if ( ptr->key == p_key )
+				return ptr->value;
+			ptr = ptr->next;
+		}
+
+		if ( !ptr ) throw Exception( "Map [] :: Failed to find the desired key!" );
 	}
 
 	void add( key_type K, val_type V )

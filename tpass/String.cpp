@@ -292,7 +292,7 @@ String String::token( const char_t* p_delimiters )
 		return res;
 	}
 
-	for ( uint32_t i=this->m_token; i<=this->length()+1; i++ )
+	for ( size_t i=this->m_token; i<=this->length()+1; i++ )
     {
         char_t v = this->at(i);
 
@@ -324,19 +324,13 @@ Array<String> String::split( const char_t* p_delimiters )
 	// NOTE (Rexhunter99#): String::split() seems to work, requires stress testing though.
 	String __temp = *this;
 	size_t __count = 0;
+	char* __cstr = strdup( *this );
+	char* tok = strtok( __cstr, p_delimiters );;
 
-    while ( true )
+    while ( tok )
 	{
-		String tok = __temp.token( p_delimiters );
-
-		if ( tok )
-		{
-			__count++;
-		}
-		else
-		{
-			break;
-		}
+		__count++;
+		tok = strtok( 0, p_delimiters );
 	}
 
     Array<String> res( __count );
@@ -344,8 +338,11 @@ Array<String> String::split( const char_t* p_delimiters )
 
 	for ( size_t i=0; i<__count; i++ )
 	{
-		res[i] = __temp.token( p_delimiters );
+		if ( i==0 ) res[i] = strtok( __cstr, p_delimiters );
+		else		res[i] = strtok( 0, p_delimiters );
 	}
+
+	free( __cstr );
 
     return res;
 }
@@ -367,10 +364,21 @@ void String::__clear()
 
 size_t String::find( const char* p_string, size_t p_start )
 {
-	if ( this->clear() ) return String::npos;
+	if ( this->empty() ) return String::npos;
 	size_t p_slen = strlen( p_string );
+	bool _found = false;
 
-	if ( )
+	for ( size_t i=p_start; i<this->length(); i++ )
+	{
+		_found = true;
+		for ( size_t f=0; f<p_slen; f++ )
+		{
+			// If the character doesn't match, just bail
+			if ( p_string[f] != this->at( i + f ) ) { _found = false; break; }
 
-	return -1;
+		}
+		if ( _found ) return i;
+	}
+
+	return String::npos;
 }

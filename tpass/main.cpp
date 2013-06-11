@@ -24,7 +24,7 @@ int main( int argc, char **argv )
     {
 		Trespasser game( "Trespasser" );
 
-		Shader *test = new Shader( String("data/shaders/simple-v.glsl"), String() );
+		Shader *test = new Shader( String("data/shaders/terrain-v.glsl") );
 		delete test;
 
         while ( true )
