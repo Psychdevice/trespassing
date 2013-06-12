@@ -23,9 +23,11 @@ Shader::Shader( const Shader& p_copy )
 
 Shader::Shader( String p_shader )
 {
-	this->m_uniforms.add( String( "diffuse" ), 2 );
-	this->m_uniforms.add( String( "normal" ), 10 );
-	this->m_uniforms.add( String( "detail" ), 32 );
+	this->m_uniforms.append( String( "diffuse" ), 2 );
+	this->m_uniforms.append( String( "normal" ), 10 );
+	this->m_uniforms.append( String( "detail" ), 32 );
+
+	this->m_uniforms.remove( String( "normal" ) );
 
 	sout << "diffuse == " << this->m_uniforms[ String( "diffuse" ) ] << endl;
 	sout << "normal == " << this->m_uniforms[ String( "normal" ) ] << endl;
@@ -51,4 +53,12 @@ Shader::Shader( String p_shader )
 
 Shader::~Shader()
 {
+	// -- Detach and delete shaders
+	if ( m_vshader ) { glDetachShader( m_program, m_vshader ); glDeleteShader( m_vshader ); }
+	if ( m_fshader ) { glDetachShader( m_program, m_fshader ); glDeleteShader( m_fshader ); }
+	if ( m_gshader ) { glDetachShader( m_program, m_gshader ); glDeleteShader( m_gshader ); }
+	if ( m_cshader ) { glDetachShader( m_program, m_cshader ); glDeleteShader( m_cshader ); }
+	if ( m_eshader ) { glDetachShader( m_program, m_eshader ); glDeleteShader( m_eshader ); }
+	// -- Delete the program
+	glDeleteProgram( m_program );
 }

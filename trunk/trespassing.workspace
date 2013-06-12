@@ -2,5 +2,6 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="Trespassing">
 		<Project filename="tpass/tpass.cbp" />
+		<Project filename="glsl-tool/glsl-tool.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
