@@ -6,13 +6,13 @@ Rexhunter99's Standard Template Library, is a custom built STL library specifica
 
 = Components =
 Current available types are:
-  * Array< class >
-  * Vector< class >
+  * Array< value_type >
+  * Vector< value_type >
   * String - _Was templated for character types but is controlled by UNICODE definitions now_
-  * Map< key_type, value_type >
-  * OStream
-  * FStream
-  * Exception _Evolving, current has provisions for various necessities_
+  * [RSTL#Map<K,V>] Map< key_type, value_type >
+  * OStream : IOStream
+  * FStream : IOStream
+  * Exception - _Evolving, current has provisions for various necessities_
 
 == Array`<T>` ==
 Constructors
@@ -44,3 +44,13 @@ Methods:
   * void erase( size_t p_index );
 Proposed:
   * void erase( size_t p_start, size_t p_end );
+
+== Map`<K,V>` ==
+Constructors:
+  * Map();
+  * Map( const Map`<K,V>`& p_map );
+Methods:
+  * append( K p_key, V p_value );
+  * remove( K p_key );
+  * clear( );
+  * V& find( K p_key );
