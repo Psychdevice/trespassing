@@ -9,7 +9,7 @@ Current available types are:
   * Array< value_type >
   * Vector< value_type >
   * String - _Was templated for character types but is controlled by UNICODE definitions now_
-  * [RSTL#Map<K,V>] Map< key_type, value_type >
+  * [RSTL#Map_<K,V> `Map< key_type, value_type >`]
   * OStream : IOStream
   * FStream : IOStream
   * Exception - _Evolving, current has provisions for various necessities_
