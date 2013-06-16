@@ -271,6 +271,16 @@ public:
 	 */
     const T* data( );
 
+    class iterator
+    {
+	public:
+
+		//operator T& ()
+
+	protected:
+
+    };
+
 protected:
 
 	friend class Array<T>;

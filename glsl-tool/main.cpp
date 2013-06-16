@@ -3,101 +3,178 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <vector>
+#include <string>
 
-struct rtshader_s {
+
+
+class contents_t
+{
+public:
+
+	std::string		name;
+	uint32_t		type;
+	size_t			offset;
+	size_t			length;
+	uint8_t			*data;
+
+	contents_t() :
+		name( "" ), type( 0 ), offset( 0 ), length( 0 ), data( 0 )
+	{}
+	~contents_t()
+	{
+		if ( data ) free( data );
+	}
+};
+
+struct rtshader_s { // 4 + 2 + 2
 	uint32_t	coin;
 	uint8_t		version;
 	uint8_t		encoded;
 	uint8_t		glsl_major,
 				glsl_minor;
 
-	uint32_t	vertex_offset;
-	uint32_t	frag_offset;
-	uint32_t	geom_offset;
-	uint32_t	tesscontrol_offset;
-	uint32_t	tesseval_offset;
+	std::vector<contents_t>	tableofcontents;
 } header;
 
-int main( int argc, char **argv )
+
+
+int loadShader( char* in_file )
 {
-	char		out_dest[256];
-	char		in_shader[256];
-	size_t		vlength = 0,
-				flength = 0;
-	FILE		*fp = 0;
-	uint8_t		*vshader = 0,
-				*fshader = 0;
+	FILE *fp = NULL;
 
-	// -- Command line processing
-	for ( int i=1; i<argc; i++ )
+	printf( "source file: \"%s\"\n", in_file );
+
+	if ( (fp = fopen( in_file, "rb" )) )
 	{
-		if ( !strncmp(argv[i], "-o=", 3 ) )
-		{
-			strcpy( out_dest, argv[i] + 3 );
-			printf( "Destination File: \"%s\"\n", out_dest );
-		}
-		if ( !strncmp(argv[i], "-v=", 3 ) )
-		{
-			sscanf( argv[i] + 3, "%d.%d", &header.glsl_major, &header.glsl_minor );
-			printf( "Shader Version: \"%s\"\n", out_dest );
-		}
-		if ( !strncmp(argv[i], "-e=", 3 ) )
-		{
-			header.encoded = atoi( argv[i] + 3 );
-			printf( "Encoding: %d\n", header.encoded );
-		}
-		if ( !strncmp(argv[i], "-vs=", 4 ) )
-		{
-			strcpy( in_shader, argv[i] + 4 );
-			printf( "Vertex Shader: \"%s\"\n", in_shader );
-			if ( (fp = fopen( in_shader, "rb" )) )
-			{
-				fseek( fp, 0, SEEK_END );
-				vlength = ftell( fp );
-				fseek( fp, 0, SEEK_SET );
-				vshader = (uint8_t*)malloc( vlength );
-				fread( vshader, vlength, 1, fp );
-				fclose( fp );
-			}
-		}
-		if ( !strncmp(argv[i], "-fs=", 4 ) )
-		{
-			strcpy( in_shader, argv[i] + 4 );
-			printf( "Fragment Shader: \"%s\"\n", in_shader );
-			if ( (fp = fopen( in_shader, "rb" )) )
-			{
-				fseek( fp, 0, SEEK_END );
-				flength = ftell( fp );
-				fseek( fp, 0, SEEK_SET );
-				fshader = (uint8_t*)malloc( flength );
-				fread( vshader, flength, 1, fp );
-				fclose( fp );
-			}
-		}
-	}
+		contents_t temp_item;
+		header.tableofcontents.push_back( temp_item );
+		contents_t *item = &( header.tableofcontents[ header.tableofcontents.size()-1 ] );
 
-	// -- Set up the binary blob file header
-	memset( &header, 0, sizeof(rtshader_s) );
-	header.coin = ('R') + ('T'<<8) + ('3'<<16) + ('D'<<24);
-	header.version		= 1;		// -- First version of this file format
-	header.encoded		= 0;		// 1 == XOR? Leave as 0 (unencoded) for now
-	header.glsl_major	= 4;		// -- Default is 4.0 can be anything
-	header.glsl_minor	= 0;
+		item->name		= in_file;
+		item->type		= 0;
+		item->offset	= 0;
 
-	header.vertex_offset = 8; // -- Always begins after the coin and GLSL version
-	header.frag_offset = header.vertex_offset + vlength;
+		fseek( fp, 0, SEEK_END );
+		item->length = ftell( fp );
+		fseek( fp, 0, SEEK_SET );
 
-	if ( (fp = fopen( out_dest, "wb" ) ) )
-	{
+		item->data = (uint8_t*)malloc( item->length );
+		fread( item->data, item->length, 1, fp );
+
 		fclose( fp );
 	}
 	else
 	{
-		printf( "Failed to open the destination output file for writing...\n" );
+		printf( "error\t|\tFailed to open source file \"%s\"!\n", in_file );
+		return 3;
 	}
 
-	if ( vshader ) free(vshader);
-	if ( fshader ) free(fshader);
+	return 0;
+}
 
+
+int main( int argc, char **argv )
+{
+	char		out_dest[256];
+	FILE		*fp = 0;
+	bool hasoutput = false;
+	bool hasinputs = false;
+
+	// -- Clear the memory for the header
+	memset( &header, 0, sizeof(rtshader_s) );
+
+	// -- Command line processing
+	for ( int i=1; i<argc; i++ )
+	{
+		if ( !strncmp(argv[i], "-o", 2 ) )
+		{
+			strcpy( out_dest, argv[i+1] );
+			i++;
+			printf( "Destination File: \"%s\"\n", out_dest );
+			hasoutput = true;
+			continue;
+		}
+		if ( !strncmp(argv[i], "-v", 2 ) )
+		{
+			unsigned int major,minor;
+			sscanf( argv[i+1], "%u.%u", &major, &minor );
+			i++;
+			header.glsl_major = major;
+			header.glsl_minor = minor;
+
+			printf( "Shader Version: %u.%u\n", major, minor );
+			continue;
+		}
+		if ( !strncmp(argv[i], "-e", 2 ) )
+		{
+			header.encoded = atoi( argv[i+1] );
+			i++;
+			printf( "Encoding: %d\n", header.encoded );
+			continue;
+		}
+		if ( !strncmp(argv[i], "-i", 2 ) )
+		{
+			loadShader( argv[i+1] );
+			i++;
+			hasinputs = true;
+			continue;
+		}
+		if ( !strncmp(argv[i], "--input=", 8 ) )
+		{
+			char in_name[256];
+
+			if ( strstr( argv[i], "\"" ) )
+			{
+				strncpy( in_name, argv[i] + 9, strlen(argv[i])-10 );
+			}
+			else
+			{
+				strcpy( in_name, argv[i] + 8 );
+			}
+
+			int ret = 0;
+
+			if ( (ret = loadShader( in_name )) != 0 )
+			{
+				header.tableofcontents.clear();
+				return ret;
+			}
+
+			hasinputs = true;
+			continue;
+		}
+	}
+
+	if ( !hasinputs )
+	{
+		printf( "error\t|\tThere are no shader source files to compile!  Aborting..." );
+		return 1;
+	}
+
+	// -- Set up the binary blob file
+	if ( hasoutput )
+	{
+		header.coin = ('R') + ('T'<<8) + ('3'<<16) + ('D'<<24);
+		header.version		= 1;		// -- First version of this file format
+		header.glsl_major	= 4;		// -- Default is 4.0 can be anything
+		header.glsl_minor	= 0;		// --
+
+		if ( (fp = fopen( out_dest, "wb" ) ) )
+		{
+			fwrite( &header, 8, 1, fp );
+
+			fclose( fp );
+		}
+		else
+		{
+			printf( "Failed to open the destination output file for writing...\n" );
+			return 2;
+		}
+	}
+
+	header.tableofcontents.clear();
+
+	system( "PAUSE" );
 	return 0;
 }
