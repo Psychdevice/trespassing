@@ -49,7 +49,7 @@ public:
 			ptr = ptr->next;
 		}
 
-		//if ( !ptr ) throw Exception( "Map [] :: Failed to find the desired key!" );
+		if ( !ptr ) throw Exception( "Map [] :: Failed to find the desired key!\nnewline1\nnewline2\nnewline3\nnewline4" );
 
 		return val_default;
 	}

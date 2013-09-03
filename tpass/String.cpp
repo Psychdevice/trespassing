@@ -322,10 +322,37 @@ Array<String> String::split( const char_t* p_delimiters )
 {
 	// TODO (Rexhunter99#1#): Test this function
 	// NOTE (Rexhunter99#): String::split() seems to work, requires stress testing though.
-	String __temp = *this;
-	size_t __count = 0;
+
+	size_t __count = 1;
 	char* __cstr = strdup( *this );
-	char* tok = strtok( __cstr, p_delimiters );;
+	char* tok = strtok( __cstr, p_delimiters );
+
+	while ( tok )
+	{
+		tok = strtok( 0, p_delimiters );
+		if ( !tok ) break;
+		__count++;
+	}
+
+	free( __cstr );
+	__cstr = strdup( *this );
+
+	Array<String> res( __count );
+	res[0] = strtok( __cstr, p_delimiters );
+
+	for ( size_t i=1; i<__count; i++ )
+	{
+		res[i] = strtok( 0, p_delimiters );
+	}
+
+	free( __cstr );
+
+	return res;
+
+	/*String __temp = *this;
+	size_t __count = 1;
+	char* __cstr = strdup( *this );
+	char* tok = strtok( __cstr, p_delimiters );
 
     while ( tok )
 	{
@@ -344,7 +371,7 @@ Array<String> String::split( const char_t* p_delimiters )
 
 	free( __cstr );
 
-    return res;
+    return res;*/
 }
 
 bool String::empty() const

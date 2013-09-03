@@ -142,7 +142,7 @@ int32_t ExceptionDialog( Exception& e )
 
 								for ( line_num = 0; line_num < lines.size(); line_num++ )
 								{
-									XDrawString( dpy, edt_text, gc, 4, 4 + (16*( line_num + 1 ) ), lines[line_num], lines[line_num].length()-1 );
+									XDrawString( dpy, edt_text, gc, 4, 4 + (16*( line_num + 1 ) ), lines[line_num], lines[line_num].length() );
 								}
 							}
 						}

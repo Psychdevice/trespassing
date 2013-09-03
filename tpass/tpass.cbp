@@ -7,7 +7,7 @@
 		<Option pch_mode="2" />
 		<Option default_target="Debug-Nix" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Utilities\;Documentation\;Graphics\;Graphics\Shaders\;Game\;Unused\;" />
+		<Option virtualFolders="Utilities/;Documentation/;Graphics/;Graphics/Shaders/;Game/;Unused/;" />
 		<Build>
 			<Target title="Debug-Win">
 				<Option platforms="Windows;Unix;" />
